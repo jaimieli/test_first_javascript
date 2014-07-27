@@ -15,12 +15,12 @@ function Temperature () {
 	this.celcius = function() {
 		return temperatureC;
 	}
-	this.setFahrenheit = function (f) {
-		return temperatureF = f;
-		return temperatureC = (f -  32)  *  5 /9;
-	};
-	this.setCelcius = function (c) {
-		return temperatureF = c *  9 / 5 + 32;
-		return temperatureC = c;
-	};
-}
+	this.setFahrenheit = function (x) {
+		return temperatureF = x;
+		return temperatureC = f2c(x);
+	}
+	this.setCelcius = function (x) {
+		return temperatureF = c2f(x);
+		return temperatureC = x;
+	}
+};
