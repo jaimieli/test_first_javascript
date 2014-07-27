@@ -91,14 +91,13 @@ function sum(x) {
 	return reduce(x, 0, add);
 }
 
-function once(func, context){ 
-	var result;
-	return function() { 
-		if(func) {
-			result = func.apply(context || this, arguments);
-			func = null;
+function once (func) {
+	var called = false;
+	return function () {
+		if (!called) {
+			func();
 		}
-		return result;
+		called = true;
 	}
 }
 
